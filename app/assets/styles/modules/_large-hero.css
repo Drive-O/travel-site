@@ -18,15 +18,16 @@ nesting mit BEM -> &__element
 		width: 100%;
 		text-align: center;
 	}
+	&__title{
+		font-weight: 300;
+		color: #2f5572;
+		font-size: 4.8rem;
+	}
+	&__subtitle{
+		font-weight: 300;
+		color: #2f5572;
+		font-size: 2.9rem;
+	}
+	
+}
 
-}
-.large-hero__title{
-	font-weight: 300;
-	color: #2f5572;
-	font-size: 4.8rem;
-}
-.large-hero__subtitle{
-	font-weight: 300;
-	color: #2f5572;
-	font-size: 2.9rem;
-}
