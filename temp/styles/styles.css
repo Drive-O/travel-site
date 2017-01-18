@@ -1,3 +1,8 @@
+.header{
+	color: #ddd;
+	font-size: 20px;
+}
+
 .beispiel{ 
 	border-radius: 50%;
 	box-sizing: border-box;
