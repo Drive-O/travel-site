@@ -1,15 +1,20 @@
 const gulp = require("gulp"),
-watch = require("gulp-watch");
+watch = require("gulp-watch"),
+postcss = require("gulp-postcss"),
+prefix = require("autoprefixer");
 
 gulp.task("default", function(){
 	console.log("Default Task is running"); //!
 })
-gulp.task("change", function(){
-	console.log("Change commited!");
+
+gulp.task("css", function(){
+	gulp.src("./app/assets/styles/styles.css")
+	.pipe(postcss([prefix]))
+	.pipe(gulp.dest("./temp/styles/"));
 })
 
 gulp.task("watch", function(){
-	watch("./app/index.html", function(){
-		gulp.start("change");
+	watch("./app/assets/styles/**/*.css", function(){
+		gulp.start("css");
 	});
 })
