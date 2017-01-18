@@ -2,7 +2,8 @@ const gulp = require("gulp"),
 watch = require("gulp-watch"),
 postcss = require("gulp-postcss"),
 prefix = require("autoprefixer"),
-imports = require("postcss-import");
+imports = require("postcss-import"),
+nesting = require("postcss-nesting");
 
 gulp.task("default", function(){
 	console.log("Default Task is running"); //!
@@ -10,7 +11,7 @@ gulp.task("default", function(){
 
 gulp.task("css", function(){
 	gulp.src("./app/assets/styles/styles.css")
-	.pipe(postcss([imports, prefix]))
+	.pipe(postcss([imports, prefix, nesting]))
 	.pipe(gulp.dest("./temp/styles/"));
 })
 
