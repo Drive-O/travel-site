@@ -14,6 +14,10 @@ gulp.task("default", function(){
 gulp.task("css", function(){
 	return gulp.src("./app/assets/styles/styles.css")
 	.pipe(postcss([imports, prefix, nesting, vars]))
+	.on("error", function(errorInfo){
+		console.log(errorInfo.toString());
+		this.emit("end"); //Error Handling
+	})
 	.pipe(gulp.dest("./app/temp/styles/"));
 })
 
